@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="robots" content="index, follow">
+  <meta name="description" content="Fique por dentro das últimas notícias de Vitória - ES. Atualizações diárias sobre política, esportes, cultura e mais.">
+  <meta name="keywords" content="notícias Vitória ES, notícias Espírito Santo, jornal Vitória, atualizações Vitória, manchetes Vitória ES">
+  <meta name="author" content="Portal Vitória Notícias">
+  <link rel="canonical" href="https://www.seusite.com.br/">
+  <title>Notícias de Vitória - ES | Atualizações em tempo real</title>
+  
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      background: #f4f4f4;
+      color: #333;
+    }
+
+    header {
+      background-color: #003366;
+      color: white;
+      padding: 20px;
+      text-align: center;
+    }
+
+    main {
+      padding: 20px;
+      max-width: 800px;
+      margin: auto;
+    }
+
+    .noticia {
+      background: white;
+      margin-bottom: 20px;
+      padding: 15px;
+      border-left: 5px solid #0077cc;
+    }
+
+    .noticia h2 {
+      margin-top: 0;
+      font-size: 20px;
+    }
+
+    .noticia time {
+      font-size: 14px;
+      color: #777;
+    }
+
+    /* Popup propaganda */
+    #popup-propaganda {
+      position: fixed;
+      top: 50%;
+      left: 50%;
+      width: 350px;
+      height: 250px;
+      margin-top: -125px;
+      margin-left: -175px;
+      background: white;
+      box-shadow: 0 0 10px rgba(0,0,0,0.5);
+      z-index: 1000;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    #popup-conteudo {
+      position: relative;
+      width: 100%;
+      height: 100%;
+    }
+
+    #popup-conteudo iframe {
+      width: 100%;
+      height: 100%;
+      border: none;
+    }
+
+    #fechar-popup {
+      position: absolute;
+      top: 5px;
+      right: 5px;
+      background: red;
+      color: white;
+      border: none;
+      border-radius: 50%;
+      width: 25px;
+      height: 25px;
+      cursor: pointer;
+      font-weight: bold;
+    }
+
+    @media (max-width: 400px) {
+      #popup-propaganda {
+        width: 90%;
+        height: auto;
+        margin: 0;
+        top: 10%;
+        left: 5%;
+      }
+    }
+  </style>
+
+  <script defer src="noticias.js"></script>
+</head>
+<body>
+  <header>
+    <h1>Notícias de Vitória - ES</h1>
+    <p>Atualizações em tempo real sobre os principais acontecimentos da capital capixaba.</p>
+  </header>
+
+  <main id="noticias">
+    <!-- Notícias serão inseridas aqui pelo JS -->
+    <noscript>
+      <p>Ative o JavaScript para ver as últimas notícias de Vitória - ES.</p>
+    </noscript>
+  </main>
+
+  <!-- Propaganda -->
+  <div id="popup-propaganda" aria-label="Propaganda">
+    <div id="popup-conteudo">
+      <button id="fechar-popup" onclick="document.getElementById('popup-propaganda').style.display='none'">✖</button>
+      <iframe src="https://modeloanuncioc01.pages.dev/" title="Anúncio"></iframe>
+    </div>
+  </div>
+</body>
+</html>
