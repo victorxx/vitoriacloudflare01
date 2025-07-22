@@ -7,7 +7,7 @@
   <meta name="description" content="Fique por dentro das últimas notícias de Vitória - ES. Atualizações diárias sobre política, esportes, cultura e mais.">
   <meta name="keywords" content="notícias Vitória ES, notícias Espírito Santo, jornal Vitória, atualizações Vitória, manchetes Vitória ES">
   <meta name="author" content="Portal Vitória Notícias">
-  <link rel="canonical" href="https://www.seusite.com.br/">
+ 
   <title>Notícias de Vitória - ES | Atualizações em tempo real</title>
   
   <style>
@@ -122,7 +122,7 @@
   <div id="popup-propaganda" aria-label="Propaganda">
     <div id="popup-conteudo">
       <button id="fechar-popup" onclick="document.getElementById('popup-propaganda').style.display='none'">✖</button>
-      <iframe src="https://modeloanuncioc01.pages.dev/" title="Anúncio"></iframe>
+      <iframe src="https://modeloanuncio01.pages.dev/" title="Anúncio"></iframe>
     </div>
   </div>
 </body>
