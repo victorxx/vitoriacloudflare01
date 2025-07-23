@@ -1,5 +1,3 @@
-// noticias.js
-
 document.addEventListener('DOMContentLoaded', () => {
   const noticias = [
     {
@@ -19,16 +17,41 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   ];
 
+  let indexAtual = 0;
   const container = document.getElementById('noticias');
 
-  noticias.forEach(noticia => {
-    const artigo = document.createElement('article');
-    artigo.className = 'noticia';
-    artigo.innerHTML = `
-      <h2>${noticia.titulo}</h2>
-      <time datetime="${noticia.data}">${new Date(noticia.data).toLocaleDateString('pt-BR')}</time>
-      <p>${noticia.conteudo}</p>
-    `;
-    container.appendChild(artigo);
-  });
+  // Cria o botão dinamicamente
+  const botao = document.createElement('button');
+  botao.id = 'carregarMais';
+  botao.textContent = 'Carregar próxima notícia';
+  botao.style.marginTop = '20px';
+  botao.style.padding = '10px 20px';
+  botao.style.fontSize = '16px';
+
+  // Adiciona o botão logo após o container de notícias
+  container.insertAdjacentElement('afterend', botao);
+
+  function carregarNoticia() {
+    if (indexAtual < noticias.length) {
+      const noticia = noticias[indexAtual];
+      const artigo = document.createElement('article');
+      artigo.className = 'noticia';
+      artigo.innerHTML = `
+        <h2>${noticia.titulo}</h2>
+        <time datetime="${noticia.data}">${new Date(noticia.data).toLocaleDateString('pt-BR')}</time>
+        <p>${noticia.conteudo}</p>
+      `;
+      container.appendChild(artigo);
+      indexAtual++;
+    }
+
+    if (indexAtual >= noticias.length) {
+      botao.style.display = 'none';
+    }
+  }
+
+  botao.addEventListener('click', carregarNoticia);
+
+  // Carrega a primeira notícia automaticamente
+  carregarNoticia();
 });
